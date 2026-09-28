@@ -28,6 +28,8 @@ $(call soong_config_set,lineage_bootanimation,height,$(TARGET_SCREEN_HEIGHT))
 $(call soong_config_set,lineage_bootanimation,width,$(TARGET_SCREEN_WIDTH))
 $(call soong_config_set,lineage_bootanimation,half_res,$(TARGET_BOOTANIMATION_HALF_RES))
 
+# Yasvara dynamic-colour boot animation, unless the device ships its own.
+TARGET_BOOTANIMATION ?= vendor/lineage/bootanimation/yasvara/bootanimation.zip
 ifneq ($(TARGET_BOOTANIMATION),)
 $(call soong_config_set,lineage_bootanimation,prebuilt_file,$(TARGET_BOOTANIMATION))
 endif
