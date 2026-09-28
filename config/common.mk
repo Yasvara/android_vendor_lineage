@@ -149,8 +149,12 @@ endif
 
 ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
 PRODUCT_PACKAGES += \
-    LineageParts \
+    LineageParts
+
+ifneq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
     LineageSetupWizard
+endif
 endif
 
 PRODUCT_PACKAGES += \
@@ -307,3 +311,4 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+include vendor/lineage/config/gms.mk

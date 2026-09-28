@@ -12,8 +12,13 @@ PRODUCT_PACKAGES += \
     Etar \
     Profiles \
     Recorder \
-    Seedvault \
     Twelve
+
+# Google Restore takes over backup and restore on GMS builds.
+ifneq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
+    Seedvault
+endif
 
 ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
