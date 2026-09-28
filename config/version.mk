@@ -43,3 +43,22 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE)
+
+# Yasvara version
+YASVARA_VERSION_MAJOR := 1
+YASVARA_VERSION_MINOR := 0
+
+ifeq ($(WITH_GMS),true)
+    YASVARA_VARIANT := GMS
+else
+    YASVARA_VARIANT := VANILLA
+endif
+
+YASVARA_VERSION := $(YASVARA_VERSION_MAJOR).$(YASVARA_VERSION_MINOR)-$(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)-$(YASVARA_VARIANT)-$(LINEAGE_BUILD)
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.yasvara.version=$(YASVARA_VERSION) \
+    ro.yasvara.build.version=$(YASVARA_VERSION_MAJOR).$(YASVARA_VERSION_MINOR) \
+    ro.yasvara.variant=$(YASVARA_VARIANT) \
+    ro.yasvara.releasetype=$(LINEAGE_BUILDTYPE) \
+    ro.yasvara.base=lineage-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)

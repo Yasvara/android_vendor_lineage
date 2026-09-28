@@ -14,9 +14,9 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# Yasvara OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/Yasvara-$(YASVARA_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
