@@ -121,6 +121,9 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
+# Let R8 optimize services.jar as well, not only shrink it.
+FULL_SYSTEM_OPTIMIZE_JAVA ?= true
+
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
